@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState, type CSSProperties } from "react";
 import santAnnapelagoPanorama from "@/assets/santannapelago-panorama.jpg.asset.json";
 import laTorreLogo from "@/assets/la-torre-logo-bianco.png.asset.json";
 import { MenuSection } from "@/components/MenuSection";
