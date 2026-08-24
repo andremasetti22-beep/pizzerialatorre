@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useState } from "react";
 import santAnnapelagoPanorama from "@/assets/santannapelago-panorama.jpg.asset.json";
 import laTorreLogo from "@/assets/la-torre-logo-bianco.png.asset.json";
+import bgBosco from "@/assets/bg-bosco.jpg.asset.json";
+import bgCuore from "@/assets/bg-cuore.jpg.asset.json";
+import bgCascata from "@/assets/bg-cascata.jpg.asset.json";
 import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
@@ -44,21 +47,27 @@ const nav = [
   { id: "birre", label: "Le birre" },
 ];
 
-const tints: Record<string, string> = {
-  hero: "var(--tint-hero)",
-  pizze: "var(--tint-pizze)",
-  paesane: "var(--tint-paesane)",
-  speciali: "var(--tint-speciali)",
-  cascate: "var(--tint-cascate)",
-  birre: "var(--tint-birre)",
-  spina: "var(--tint-birre)",
+const backgrounds = [
+  { key: "bosco", url: bgBosco.url },
+  { key: "cuore", url: bgCuore.url },
+  { key: "cascata", url: bgCascata.url },
+];
+
+const sectionBg: Record<string, string> = {
+  hero: "bosco",
+  pizze: "bosco",
+  paesane: "cuore",
+  speciali: "cascata",
+  cascate: "cascata",
+  birre: "cuore",
+  spina: "bosco",
 };
 
-function useSectionTint() {
+function useActiveSection() {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const els = Object.keys(tints)
+    const els = Object.keys(sectionBg)
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
 
@@ -76,20 +85,34 @@ function useSectionTint() {
     return () => observer.disconnect();
   }, []);
 
-  return tints[active] ?? "var(--tint-hero)";
+  return active;
 }
 
 function Index() {
-  const tint = useSectionTint();
+  const active = useActiveSection();
+  const currentBg = sectionBg[active] ?? "bosco";
 
   return (
-    <div
-      className="paper bg-dynamic min-h-screen"
-      style={{ "--section-tint": tint } as CSSProperties}
-    >
-      <header className="fixed top-0 z-30 w-full border-b-2 border-primary/25 bg-background/70 backdrop-blur">
+    <div className="relative min-h-screen">
+      {/* Sfondo dinamico a immagini con velo chiaro per la leggibilità */}
+      <div className="fixed inset-0 -z-10">
+        {backgrounds.map((b) => (
+          <img
+            key={b.key}
+            src={b.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition-opacity duration-[1400ms] ease-in-out"
+            style={{ opacity: b.key === currentBg ? 1 : 0 }}
+          />
+        ))}
+        <div className="veil paper absolute inset-0" />
+      </div>
+
+      <header className="fixed top-0 z-30 w-full border-b border-primary/20 bg-background/60 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
           <span className="font-display text-lg text-primary">La Torre</span>
+
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
             {nav.map((n) => (
               <a
@@ -167,8 +190,10 @@ function Index() {
         />
 
         <section id="cascate" className="scroll-mt-20 py-12 md:py-16">
-          <h2 className="font-display text-4xl leading-[0.95] text-primary sm:text-5xl md:text-6xl">
-            Le cascate di S. Annapelago
+          <h2 className="font-display text-3xl leading-[1.05] text-primary sm:text-4xl md:text-5xl">
+            Le cascate di
+            <br />
+            <span className="whitespace-nowrap">Sant'Annapelago</span>
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-foreground/70">
             Le pizze speciali prendono il nome da queste meraviglie naturali del territorio.
