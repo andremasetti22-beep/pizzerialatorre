@@ -1,0 +1,103 @@
+export type Dish = { name: string; desc?: string; price?: string };
+export type Section = { id: string; title: string; subtitle?: string; items: Dish[] };
+
+export const pizze: Dish[] = [
+  { name: "Margherita", desc: "Pomodoro, mozzarella", price: "7,00" },
+  { name: "Marinara", desc: "Pomodoro, aglio, prezzemolo, filo d'olio evo", price: "7,50" },
+  { name: "Quattro Formaggi", desc: "Pomodoro, mozzarella, gorgonzola, parmigiano e fontina", price: "9,00" },
+  { name: "Vegetariana", desc: "Pomodoro, mozzarella, melanzane, peperoni, zucchine", price: "8,50" },
+  { name: "Mediterranea", desc: "Pomodoro, mozzarella, tonno, olive nere, pomodorini, capperi e origano", price: "9,50" },
+  { name: "Quattro Stagioni", desc: "Pomodoro, mozzarella, prosciutto cotto, olive, carciofi, funghi", price: "9,00" },
+  { name: "Diavola", desc: "Pomodoro, mozzarella, salamino piccante", price: "8,00" },
+  { name: "Napoli", desc: "Pomodoro, mozzarella, capperi, acciughe", price: "9,00" },
+  { name: "Salsiccia", desc: "Pomodoro, mozzarella, salsiccia di Sant'Annapelago", price: "8,00" },
+  { name: "Cotto", desc: "Pomodoro, mozzarella, prosciutto cotto", price: "8,00" },
+  { name: "Fungi", desc: "Pomodoro, mozzarella, funghi champignon", price: "8,00" },
+  { name: "Fiatella", desc: "Pomodoro, mozzarella, cipolla", price: "8,00" },
+  { name: "Arruscatella", desc: "Mozzarella, salsiccia, pancetta, cipolla, pomodorini, grana", price: "9,50" },
+  { name: "Rustica", desc: "Mozzarella, salsiccia, pancetta, spinaci, grana", price: "9,50" },
+  { name: "Torre", desc: "Mozzarella, melanzane, salame piccante, gorgonzola D.O.P.", price: "9,50" },
+  { name: "Deutschland", desc: "Pomodoro, mozzarella, wurstel", price: "8,00" },
+  { name: "Bufala", desc: "Pomodoro, mozzarella di bufala, origano o basilico in base alla stagione", price: "10,00" },
+  { name: "U.S.A.", desc: "Pomodoro, mozzarella, wurstel, patate fritte", price: "9,50" },
+  { name: "Maialotta", desc: "Pomodoro, mozzarella, cotto, salsiccia, salamino piccante, pancetta, wurstel", price: "9,50" },
+  { name: "Vecchia Modena", desc: "Mozzarella, pomodorini, pancetta, grana, aceto balsamico", price: "9,50" },
+  { name: "Calzone", desc: "Pomodoro, mozzarella, cotto, funghi champignon", price: "9,00" },
+  { name: "Siciliana", desc: "Pomodoro, mozzarella, capperi, acciughe, olive", price: "8,50" },
+  { name: "Leggera", desc: "Stria, stracchino, rucola", price: "7,50" },
+  { name: "Ibiza", desc: "Mozzarella, salsiccia, cipolla, patate, rosmarino", price: "8,50" },
+  { name: "Italia", desc: "Mozzarella, bresaola, rucola, grana", price: "9,00" },
+];
+
+export const paesane: Dish[] = [
+  { name: "Vile Marrano", desc: "Pomodoro, mozzarella, speck, rucola, olio piccante", price: "8,50" },
+  { name: "Aga", desc: "Pomodoro, mozzarella, olive, salamino piccante", price: "8,50" },
+  { name: "Ila", desc: "Pomodoro, mozzarella, stracchino, crudo fuori forno, rucola", price: "9,00" },
+  { name: "Bernacca", desc: "Pomodoro, mozzarella, salsiccia, cipolla, pomodori secchi, pancetta tartufata, grana", price: "13,00" },
+  { name: "Ondi", desc: "Stria, verdure grigliate, rucola", price: "8,00" },
+  { name: "Bausto", desc: "Pomodoro, mozzarella, verdure grigliate, salamino piccante", price: "8,50" },
+  { name: "Durra", desc: "Pomodoro, mozzarella, champignon, carciofi, prosciutto crudo in forno, grana", price: "9,00" },
+  { name: "Mingus", desc: "Pomodoro, mozzarella, champignon, mascarpone, salsiccia", price: "9,00" },
+  { name: "Frà", desc: "Pomodoro, mozzarella di bufala D.O.P., pomodori secchi, prosciutto crudo, burrata, origano", price: "13,00" },
+  { name: "Civolla", desc: "Pomodoro, mozzarella, salsiccia, pomodorini, gorgonzola D.O.P., rucola", price: "9,00" },
+  { name: "Pitta", desc: "Mozzarella, gorgonzola D.O.P., spinaci, salsiccia", price: "9,00" },
+  { name: "Coppetta", desc: "1/2 pomodoro, mozzarella — 1/2 mozzarella, salsiccia, pancetta, grana", price: "8,50" },
+  { name: "Passero", desc: "Quattro formaggi, pancetta croccante", price: "9,50" },
+  { name: "W", desc: "Pomodoro, doppia mozzarella, salsiccia, cipolla", price: "9,00" },
+  { name: "Chivu", desc: "Mozzarella, salsiccia, pancetta, burrata D.O.P.", price: "10,00" },
+  { name: "Bombolo", desc: "Mozzarella, prosciutto crudo, pomodori secchi, pesto genovese, burrata D.O.P.", price: "12,00" },
+  { name: "Pummaro", desc: "Mozzarella di bufala, pancetta, pomodori secchi", price: "10,00" },
+  { name: "Nelli", desc: "Pomodoro, mozzarella, mozzarella di bufala D.O.P., prosciutto crudo, pomodorini, basilico (in stagione)", price: "10,00" },
+  { name: "Poldo", desc: "Pomodoro, mozzarella, 'nduja calabrese, pomodori secchi, cipolla", price: "10,00" },
+  { name: "Fly", desc: "Mozzarella, salsiccia, pancetta, olive nere", price: "9,00" },
+  { name: "Borsetti", desc: "Pomodoro, mozzarella, salsiccia, wurstel, cipolla", price: "9,00" },
+  { name: "Manciuz", desc: "Mozzarella, patate, pancetta, cipolla", price: "8,50" },
+  { name: "Dari-1", desc: "Pomodoro, mozzarella, salsiccia, grana a scaglie, aceto balsamico", price: "9,00" },
+  { name: "Ryuzo", desc: "Mozzarella, mozzarella di bufala D.O.P., 'nduja calabrese", price: "10,00" },
+  { name: "Sciolto", desc: "Pomodoro, mozzarella, prosciutto crudo fuori forno, pesto alla genovese", price: "9,50" },
+  { name: "Pitoìna", desc: "Pomodoro, mozzarella, cipolla, speck, mascarpone", price: "9,00" },
+  { name: "Tommy Tzunami", desc: "Pomodoro, mozzarella, cipolla, gorgonzola, funghi champignon", price: "8,50" },
+  { name: "Peiba", desc: "Mozzarella, pancetta, rucola, scaglie di grana, glassa di aceto balsamico e burrata D.O.P.", price: "9,50" },
+];
+
+export const speciali: Dish[] = [
+  { name: "Rioo", desc: "Focaccia, pomodori secchi, pesto alla genovese, burrata D.O.P.", price: "12,00" },
+  { name: "Bandita", desc: "Focaccia, mortadella di Bologna, crema di pistacchi, burrata D.O.P.", price: "12,00" },
+  { name: "Sassorso", desc: "Focaccia, pancetta tartufata, burrata D.O.P.", price: "12,00" },
+  { name: "Terzino", desc: "Focaccia, pancetta croccante, cipolla a crudo, mozzarella di bufala o burrata D.O.P.", price: "12,00" },
+  { name: "Cascadora", desc: "Focaccia, pancetta tartufata, uovo, mozzarella di bufala D.O.P.", price: "12,00" },
+];
+
+export const birreBottiglia: Dish[] = [
+  { name: "Giusta", desc: "Golden Ale. Chiara, speziata al naso, corpo leggero e maltato. (alc. 5,3%) cl. 33" },
+  { name: "Dunkel", desc: "Lager scura. Amaro, equilibrato, fuso nell'insieme delle note tostate. (alc. 4,9%) cl. 50" },
+  { name: "IPA Petrognola", desc: "Ambrata, profumata al naso con note spiccate di frutti tropicali e agrumi. (alc. 5,5%) cl. 33" },
+  { name: "Keller Ayinger", desc: "Chiara non filtrata. Sapori di malto e lieviti, sensazioni dolce-amare. (alc. 4,9%) cl. 50" },
+  { name: "Amarcord Tabachera", desc: "Belgian Strong Ale. Aroma e gusto di frutta secca in armonia con la dolcezza dei malti. (alc. 9%) cl. 50" },
+  { name: "Corsendonk Agnus", desc: "Belgian strong Ale in stile Tripel. Note speziate e fruttate. (alc. 7,5%) cl. 75" },
+  { name: "Corsendonk Rousse", desc: "Strong Belgian Ale ambrata. Aroma di caramello, gusto dolce. (alc. 8,0%) cl. 75" },
+  { name: "Jahrudert", desc: "Export lager chiara. Maltata e delicata, in evidenza l'alta qualità dell'orzo. (alc. 5,5%) cl. 50" },
+  { name: "Montefiore Petrognola", desc: "Blanche ai 4 cereali e mix di spezie. Elegante, fresca e molto facile da bere. (alc. 5%) cl. 33" },
+  { name: "Urweisse", desc: "Weiss ambrata carica, non filtrata. Gusto pieno e complesso. (alc. 5,8%) cl. 50" },
+  { name: "Sassorosso Petrognola", desc: "Ambrata, leggermente fruttata e speziata. Gradevole e lungo il finale. (alc. 5,5%) cl. 33" },
+  { name: "Corsendonk Pater", desc: "Belgian strong Ale ambrato. Note tostate, frutta candita e cioccolata. (alc. 7,5%) cl. 75" },
+  { name: "Amarcord Volpina", desc: "Strong Ale ambrata. Forti note di caramello, speziatura da luppolo inglese. (alc. 6,5%) cl. 50" },
+  { name: "Cusna", desc: "Session IPA aromatica e rinfrescante, il luppolo Mosaic le dona un sapore fruttato e tropicale. (alc. 5,5%) cl. 50" },
+  { name: "Cimone", desc: "Amber Ale. Birra ambrata decisa ma non molto corposa, ideale per i piatti a base di carne e la cucina tradizionale. (alc. 4,9%) cl. 33" },
+  { name: "Ninfa", desc: "Belgian Saison. Bionda in stile belga, aromatica e dal carattere inconfondibile grazie alle sue note rinfrescanti. (alc. 6%) cl. 33" },
+];
+
+export const birreSpina: Dish[] = [
+  { name: "Weissbeer — Benediktiner", desc: "Profumo intenso di grano maturo, pane bianco appena sfornato e miele chiaro. Note sottili di limone fresco ed erbe, sapore snello e frizzante." },
+  { name: "Sixtus — Forst", desc: "Doppelbock di colore marrone scuro, molto profumata e dal preciso gusto di caramello e malto. Schiuma compatta e persistente. (alc. 6,5%)" },
+  { name: "Kronen — Forst", desc: "Frutto di un'antica ricetta, si distingue per le elevate note di malto e il gusto rotondo. Grande corpo ed elevata bevibilità." },
+];
+
+export const cascate = [
+  "Rioo",
+  "Sassorso",
+  "Terzino",
+  "Cascadora",
+  "La Bandita",
+  "Pozzo del Pisano",
+];
