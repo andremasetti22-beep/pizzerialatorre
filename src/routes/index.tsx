@@ -70,7 +70,7 @@ function Index() {
             alt="Panorama di Sant'Annapelago con il campanile della Torre e l'Appennino modenese"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/35 to-background" />
         </div>
 
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
