@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import santAnnapelagoPanorama from "@/assets/santannapelago-panorama.jpg.asset.json";
-import laTorreLogo from "@/assets/la-torre-logo.png.asset.json";
+import laTorreLogo from "@/assets/la-torre-logo-bianco.png.asset.json";
 import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
