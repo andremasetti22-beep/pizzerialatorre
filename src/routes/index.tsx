@@ -117,15 +117,17 @@ function Index() {
       </div>
 
       <header className="fixed top-0 z-30 w-full border-b border-primary-foreground/15 bg-primary">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-          <span className="font-display text-lg text-primary-foreground">La Torre</span>
+        <div className="mx-auto grid max-w-6xl grid-cols-[auto_minmax(0,1fr)] items-center gap-3 px-4 py-2.5 sm:gap-4 sm:px-5 sm:py-3">
+          <span className="font-display shrink-0 whitespace-nowrap text-base text-primary-foreground sm:text-lg">
+            La Torre
+          </span>
 
-          <nav className="-mx-1 flex gap-1 overflow-x-auto">
+          <nav className="no-scrollbar -mx-1 flex justify-end gap-1 overflow-x-auto overscroll-x-contain px-1">
             {nav.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="font-display shrink-0 rounded-full px-3 py-1.5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground hover:text-primary"
+                className="font-display shrink-0 whitespace-nowrap rounded-full px-2.5 py-1.5 text-[11px] text-primary-foreground/80 transition-colors hover:bg-primary-foreground hover:text-primary sm:px-3 sm:text-xs"
               >
                 {n.label}
               </a>
@@ -133,6 +135,7 @@ function Index() {
           </nav>
         </div>
       </header>
+
 
       <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
