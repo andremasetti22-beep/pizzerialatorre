@@ -77,12 +77,9 @@ function Index() {
           <img
             src={laTorreLogo.url}
             alt="Logo Pizzeria La Torre — testa di cervo stilizzata"
-            className="w-48 drop-shadow-lg sm:w-64 md:w-80"
+            className="w-56 drop-shadow-lg sm:w-72 md:w-96"
           />
           <h1 className="sr-only">Pizzeria La Torre — Sant'Annapelago</h1>
-          <p className="mt-4 max-w-md text-base font-medium text-foreground/90 sm:text-lg">
-            Impasti lunghi, ingredienti del territorio e pizze che portano i soprannomi del paese.
-          </p>
           <a
             href="#pizze"
             className="font-display mt-10 rounded-full bg-primary px-8 py-3 text-sm text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
