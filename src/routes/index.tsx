@@ -190,8 +190,10 @@ function Index() {
         />
 
         <section id="cascate" className="scroll-mt-20 py-12 md:py-16">
-          <h2 className="font-display text-4xl leading-[0.95] text-primary sm:text-5xl md:text-6xl">
-            Le cascate di S. Annapelago
+          <h2 className="font-display text-3xl leading-[1.05] text-primary sm:text-4xl md:text-5xl">
+            Le cascate di
+            <br />
+            <span className="whitespace-nowrap">Sant'Annapelago</span>
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-foreground/70">
             Le pizze speciali prendono il nome da queste meraviglie naturali del territorio.
