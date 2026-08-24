@@ -1,9 +1,9 @@
-import iRioo from "@/assets/I_Rioo.png.asset.json";
-import sassorso from "@/assets/Sassorso.png.asset.json";
-import terzino from "@/assets/Terzino.png.asset.json";
-import cascadora from "@/assets/Cascadora.png.asset.json";
-import laBandita from "@/assets/La_Bandita.png.asset.json";
-import pozzoDelPisano from "@/assets/Pozzo_del_Pisano.png.asset.json";
+import iRioo from "@/assets/I_Rioo.jpg.asset.json";
+import sassorso from "@/assets/Sassorso.jpg.asset.json";
+import terzino from "@/assets/Terzino.jpg.asset.json";
+import cascadora from "@/assets/Cascadora.jpg.asset.json";
+import laBandita from "@/assets/La_Bandita.jpg.asset.json";
+import pozzoDelPisano from "@/assets/Pozzo_del_Pisano.jpg.asset.json";
 
 export type Dish = { name: string; desc?: string; price?: string };
 export type Waterfall = { name: string; image: { url: string } };
