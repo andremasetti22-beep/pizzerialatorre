@@ -15,7 +15,7 @@ export function MenuSection({ id, title, subtitle, items, showPriceHeader = true
         {title}
       </h2>
       {subtitle && (
-        <p className="font-display mt-2 text-lg text-primary/70 sm:text-xl">{subtitle}</p>
+        <p className="font-display mt-2 text-lg uppercase text-primary/70 sm:text-xl">{subtitle}</p>
       )}
 
       {showPriceHeader && (
