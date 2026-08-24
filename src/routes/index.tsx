@@ -46,14 +46,15 @@ const nav = [
 ];
 
 const backgrounds = [
+  { key: "panorama", url: santAnnapelagoPanorama.url },
   { key: "bosco", url: bgBosco.url },
   { key: "cuore", url: bgCuore.url },
   { key: "cascata", url: bgCascata.url },
 ];
 
-// Scorrendo verso il basso: bosco → cuore → cascata (tutte e tre presenti)
+// Scorrendo verso il basso: panorama → bosco → cuore → cascata (tutte e tre le foto di sfondo presenti)
 const sectionBg: Record<string, string> = {
-  hero: "bosco",
+  hero: "panorama",
   pizze: "bosco",
   paesane: "cuore",
   speciali: "cascata",
