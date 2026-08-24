@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useState } from "react";
 import santAnnapelagoPanorama from "@/assets/santannapelago-panorama.jpg.asset.json";
 import laTorreLogo from "@/assets/la-torre-logo-bianco.png.asset.json";
+import bgBosco from "@/assets/bg-bosco.jpg.asset.json";
+import bgCuore from "@/assets/bg-cuore.jpg.asset.json";
+import bgCascata from "@/assets/bg-cascata.jpg.asset.json";
 import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
