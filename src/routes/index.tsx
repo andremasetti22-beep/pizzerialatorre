@@ -9,7 +9,6 @@ import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
   birreSpina,
-  cascate,
   paesane,
   pizze,
   speciali,
@@ -43,7 +42,6 @@ const nav = [
   { id: "pizze", label: "Le nostre pizze" },
   { id: "paesane", label: "Le paesane" },
   { id: "speciali", label: "Le speciali" },
-  { id: "cascate", label: "Le cascate" },
   { id: "birre", label: "Le birre" },
 ];
 
@@ -53,14 +51,14 @@ const backgrounds = [
   { key: "cascata", url: bgCascata.url },
 ];
 
+// Scorrendo verso il basso: bosco → cuore → cascata (tutte e tre presenti)
 const sectionBg: Record<string, string> = {
   hero: "bosco",
   pizze: "bosco",
   paesane: "cuore",
   speciali: "cascata",
-  cascate: "cascata",
   birre: "cuore",
-  spina: "bosco",
+  spina: "cascata",
 };
 
 function useActiveSection() {
@@ -118,16 +116,16 @@ function Index() {
 
       </div>
 
-      <header className="fixed top-0 z-30 w-full border-b border-primary/20 bg-background/60 backdrop-blur-xl">
+      <header className="fixed top-0 z-30 w-full border-b border-primary-foreground/15 bg-primary">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-          <span className="font-display text-lg text-primary">La Torre</span>
+          <span className="font-display text-lg text-primary-foreground">La Torre</span>
 
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
             {nav.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="font-display shrink-0 rounded-full px-3 py-1.5 text-xs text-primary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="font-display shrink-0 rounded-full px-3 py-1.5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground hover:text-primary"
               >
                 {n.label}
               </a>
@@ -198,36 +196,6 @@ function Index() {
           items={speciali}
         />
 
-        <section id="cascate" className="scroll-mt-20 py-12 md:py-16">
-          <h2 className="font-display text-3xl leading-[1.05] text-primary sm:text-4xl md:text-5xl">
-            Le cascate di
-            <br />
-            <span className="whitespace-nowrap">Sant'Annapelago</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm text-foreground/70">
-            Le pizze speciali prendono il nome da queste meraviglie naturali del territorio.
-          </p>
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {cascate.map((c) => (
-              <li
-                key={c.name}
-                className="group overflow-hidden rounded-sm border-2 border-primary/30 bg-card shadow-sm"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={c.image.url}
-                    alt={c.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="px-4 py-3 text-center">
-                  <span className="font-display text-sm text-primary">{c.name}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <MenuSection
           id="birre"

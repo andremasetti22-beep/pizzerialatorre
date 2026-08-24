@@ -92,12 +92,3 @@ export const birreSpina: Dish[] = [
   { name: "Sixtus — Forst", desc: "Doppelbock di colore marrone scuro, molto profumata e dal preciso gusto di caramello e malto. Schiuma compatta e persistente. (alc. 6,5%)" },
   { name: "Kronen — Forst", desc: "Frutto di un'antica ricetta, si distingue per le elevate note di malto e il gusto rotondo. Grande corpo ed elevata bevibilità." },
 ];
-
-export const cascate: Waterfall[] = [
-  { name: "I Rioo", image: iRioo },
-  { name: "Sassorso", image: sassorso },
-  { name: "Terzino", image: terzino },
-  { name: "Cascadoora", image: cascadora },
-  { name: "La Bandita", image: laBandita },
-  { name: "Pozzo del Pisano", image: pozzoDelPisano },
-];
