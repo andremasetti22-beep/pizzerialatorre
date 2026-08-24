@@ -44,21 +44,27 @@ const nav = [
   { id: "birre", label: "Le birre" },
 ];
 
-const tints: Record<string, string> = {
-  hero: "var(--tint-hero)",
-  pizze: "var(--tint-pizze)",
-  paesane: "var(--tint-paesane)",
-  speciali: "var(--tint-speciali)",
-  cascate: "var(--tint-cascate)",
-  birre: "var(--tint-birre)",
-  spina: "var(--tint-birre)",
+const backgrounds = [
+  { key: "bosco", url: bgBosco.url },
+  { key: "cuore", url: bgCuore.url },
+  { key: "cascata", url: bgCascata.url },
+];
+
+const sectionBg: Record<string, string> = {
+  hero: "bosco",
+  pizze: "bosco",
+  paesane: "cuore",
+  speciali: "cascata",
+  cascate: "cascata",
+  birre: "cuore",
+  spina: "bosco",
 };
 
-function useSectionTint() {
+function useActiveSection() {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const els = Object.keys(tints)
+    const els = Object.keys(sectionBg)
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
 
@@ -76,19 +82,30 @@ function useSectionTint() {
     return () => observer.disconnect();
   }, []);
 
-  return tints[active] ?? "var(--tint-hero)";
+  return active;
 }
 
 function Index() {
-  const tint = useSectionTint();
+  const active = useActiveSection();
+  const currentBg = sectionBg[active] ?? "bosco";
 
   return (
-    <div
-      className="paper bg-dynamic min-h-screen"
-      style={{ "--section-tint": tint } as CSSProperties}
-    >
-      <header className="fixed top-0 z-30 w-full border-b-2 border-primary/25 bg-background/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+    <div className="relative min-h-screen">
+      {/* Sfondo dinamico a immagini con velo chiaro per la leggibilità */}
+      <div className="fixed inset-0 -z-10">
+        {backgrounds.map((b) => (
+          <img
+            key={b.key}
+            src={b.url}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition-opacity duration-[1400ms] ease-in-out"
+            style={{ opacity: b.key === currentBg ? 1 : 0 }}
+          />
+        ))}
+        <div className="veil paper absolute inset-0" />
+      </div>
+
           <span className="font-display text-lg text-primary">La Torre</span>
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
             {nav.map((n) => (
