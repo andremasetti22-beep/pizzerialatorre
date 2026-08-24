@@ -175,6 +175,11 @@
   /* Evita sfarfallii su iOS/Android durante le transizioni */
   transform: translateZ(0) scale(1.05);
   backface-visibility: hidden;
+  contain: strict;
+}
+
+/* will-change solo sul livello in uscita/entrata, non sempre */
+@utility bg-layer-active {
   will-change: opacity;
 }
 
