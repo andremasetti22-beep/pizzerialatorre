@@ -167,9 +167,17 @@
 }
 
 @utility veil {
-  background-color: color-mix(in oklab, var(--color-background) 88%, transparent);
-  backdrop-filter: saturate(0.9);
+  /* Velo chiaro: più basso = immagini più visibili */
+  background-color: color-mix(in oklab, var(--color-background) var(--veil-strength, 68%), transparent);
 }
+
+@utility bg-layer {
+  /* Evita sfarfallii su iOS/Android durante le transizioni */
+  transform: translateZ(0) scale(1.05);
+  backface-visibility: hidden;
+  will-change: opacity;
+}
+
 
 @utility bg-dynamic {
   background-color: var(--section-tint, var(--color-background));
