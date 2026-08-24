@@ -73,7 +73,7 @@ export const speciali: Dish[] = [
   { name: "Bandita", desc: "Focaccia, mortadella di Bologna, crema di pistacchi, burrata D.O.P.", price: "12,00" },
   { name: "Sassorso", desc: "Focaccia, pancetta tartufata, burrata D.O.P.", price: "12,00" },
   { name: "Terzino", desc: "Focaccia, pancetta croccante, cipolla a crudo, mozzarella di bufala o burrata D.O.P.", price: "12,00" },
-  { name: "Cascadora", desc: "Focaccia, pancetta tartufata, uovo, mozzarella di bufala D.O.P.", price: "12,00" },
+  { name: "Cascadoora", desc: "Focaccia, pancetta tartufata, uovo, mozzarella di bufala D.O.P.", price: "12,00" },
 ];
 
 export const birreBottiglia: Dish[] = [
@@ -105,7 +105,7 @@ export const cascate: Waterfall[] = [
   { name: "I Rioo", image: iRioo },
   { name: "Sassorso", image: sassorso },
   { name: "Terzino", image: terzino },
-  { name: "Cascadora", image: cascadora },
+  { name: "Cascadoora", image: cascadora },
   { name: "La Bandita", image: laBandita },
   { name: "Pozzo del Pisano", image: pozzoDelPisano },
 ];

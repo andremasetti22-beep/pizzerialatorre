@@ -187,7 +187,7 @@ function Index() {
         <MenuSection
           id="speciali"
           title="Le speciali"
-          subtitle="(inspirate dai nomi delle cascate)"
+          subtitle="(ispirate ai nomi delle cascate)"
           items={speciali}
         />
 
