@@ -9,7 +9,6 @@ import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
   birreSpina,
-  cascate,
   paesane,
   pizze,
   speciali,
