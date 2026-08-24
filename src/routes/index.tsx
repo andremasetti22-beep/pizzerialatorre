@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import pizzeIllustrazione from "@/assets/pizze-illustrazione.jpg";
+import santAnnapelagoPanorama from "@/assets/santannapelago-panorama.jpg.asset.json";
+import laTorreLogo from "@/assets/la-torre-logo.png.asset.json";
 import { MenuSection } from "@/components/MenuSection";
 import {
   birreBottiglia,
@@ -25,6 +26,10 @@ export const Route = createFileRoute("/")({
         content:
           "Pizze classiche, paesane, speciali e birre artigianali a Sant'Annapelago.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: santAnnapelagoPanorama.url },
+      { name: "twitter:image", content: santAnnapelagoPanorama.url },
     ],
   }),
   component: Index,
@@ -41,7 +46,7 @@ const nav = [
 function Index() {
   return (
     <div className="paper min-h-screen bg-background">
-      <header className="sticky top-0 z-30 border-b-2 border-primary/25 bg-background/95 backdrop-blur">
+      <header className="fixed top-0 z-30 w-full border-b-2 border-primary/25 bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
           <span className="font-display text-lg text-primary">La Torre</span>
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
@@ -58,41 +63,57 @@ function Index() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-5">
-        <section className="grid items-center gap-8 py-12 md:grid-cols-2 md:py-20">
-          <div>
-            <h1 className="font-display text-6xl leading-[0.85] text-primary sm:text-7xl md:text-8xl">
-              La Torre
-            </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Pizzeria a Sant'Annapelago, sull'Appennino modenese. Impasti lunghi,
-              ingredienti del territorio e pizze che portano i soprannomi del paese e i
-              nomi delle nostre cascate.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#pizze"
-                className="font-display rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-transform hover:-translate-y-0.5"
-              >
-                Guarda il menù
-              </a>
-              <a
-                href="#contatti"
-                className="font-display rounded-full border-2 border-primary px-6 py-3 text-sm text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                Contatti
-              </a>
-            </div>
-          </div>
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
           <img
-            src={pizzeIllustrazione}
-            alt="Illustrazione di pizze e trance di pizza in stile serigrafico"
-            width={1024}
-            height={1536}
-            className="mx-auto max-h-[520px] w-full rounded-sm object-cover"
+            src={santAnnapelagoPanorama.url}
+            alt="Panorama di Sant'Annapelago con il campanile della Torre e l'Appennino modenese"
+            className="h-full w-full object-cover"
           />
-        </section>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+        </div>
 
+        <div className="relative z-10 flex flex-col items-center px-6 text-center">
+          <img
+            src={laTorreLogo.url}
+            alt="Logo Pizzeria La Torre — testa di cervo stilizzata"
+            className="w-48 drop-shadow-lg sm:w-64 md:w-80"
+          />
+          <h1 className="sr-only">Pizzeria La Torre — Sant'Annapelago</h1>
+          <p className="mt-4 max-w-md text-base font-medium text-foreground/90 sm:text-lg">
+            Impasti lunghi, ingredienti del territorio e pizze che portano i soprannomi del paese.
+          </p>
+          <a
+            href="#pizze"
+            className="font-display mt-10 rounded-full bg-primary px-8 py-3 text-sm text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
+          >
+            Scopri il menù
+          </a>
+        </div>
+
+        <a
+          href="#pizze"
+          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce"
+          aria-label="Scorri verso il menù"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-primary"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+      </section>
+
+      <main className="mx-auto max-w-6xl px-5">
         <MenuSection id="pizze" title="Le nostre pizze" items={pizze} />
         <MenuSection
           id="paesane"
