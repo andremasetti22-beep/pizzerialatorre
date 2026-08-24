@@ -1,4 +1,12 @@
+import iRioo from "@/assets/I_Rioo.png.asset.json";
+import sassorso from "@/assets/Sassorso.png.asset.json";
+import terzino from "@/assets/Terzino.png.asset.json";
+import cascadora from "@/assets/Cascadora.png.asset.json";
+import laBandita from "@/assets/La_Bandita.png.asset.json";
+import pozzoDelPisano from "@/assets/Pozzo_del_Pisano.png.asset.json";
+
 export type Dish = { name: string; desc?: string; price?: string };
+export type Waterfall = { name: string; image: { url: string } };
 export type Section = { id: string; title: string; subtitle?: string; items: Dish[] };
 
 export const pizze: Dish[] = [
