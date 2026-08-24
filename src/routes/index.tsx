@@ -136,14 +136,7 @@ function Index() {
       </header>
 
       <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={santAnnapelagoPanorama.url}
-            alt="Panorama di Sant'Annapelago con il campanile della Torre e l'Appennino modenese"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
 
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <img
