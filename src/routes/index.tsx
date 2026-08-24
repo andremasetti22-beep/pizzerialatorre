@@ -96,17 +96,24 @@ function Index() {
     <div className="relative min-h-screen">
       {/* Sfondo dinamico a immagini con velo chiaro per la leggibilità */}
       <div className="fixed inset-0 -z-10">
-        {backgrounds.map((b) => (
-          <img
-            key={b.key}
-            src={b.url}
-            alt=""
-            aria-hidden="true"
-            decoding="async"
-            className="bg-layer absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out"
-            style={{ opacity: b.key === currentBg ? 1 : 0 }}
-          />
-        ))}
+        {backgrounds.map((b, i) => {
+          const isActive = b.key === currentBg;
+          return (
+            <img
+              key={b.key}
+              src={b.url}
+              alt=""
+              aria-hidden="true"
+              decoding="async"
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "low"}
+              className={`bg-layer absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out ${
+                isActive ? "bg-layer-active" : ""
+              }`}
+              style={{ opacity: isActive ? 1 : 0 }}
+            />
+          );
+        })}
         <div className="veil paper absolute inset-0" />
 
       </div>
@@ -187,7 +194,7 @@ function Index() {
         <MenuSection
           id="speciali"
           title="Le speciali"
-          subtitle="(inspirate dai nomi delle cascate)"
+          subtitle="(ispirate ai nomi delle cascate)"
           items={speciali}
         />
 
