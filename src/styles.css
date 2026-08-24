@@ -147,5 +147,29 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
 }
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+@utility leader {
+  flex: 1;
+  height: 0;
+  border-bottom: 2px dashed color-mix(in oklab, var(--color-primary) 40%, transparent);
+  margin: 0 0.5rem 0.35rem;
+}
+
+@utility paper {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--color-primary) 7%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 4px 4px;
+}
+
