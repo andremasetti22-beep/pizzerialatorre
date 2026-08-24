@@ -44,10 +44,50 @@ const nav = [
   { id: "birre", label: "Le birre" },
 ];
 
+const tints: Record<string, string> = {
+  hero: "var(--tint-hero)",
+  pizze: "var(--tint-pizze)",
+  paesane: "var(--tint-paesane)",
+  speciali: "var(--tint-speciali)",
+  cascate: "var(--tint-cascate)",
+  birre: "var(--tint-birre)",
+  spina: "var(--tint-birre)",
+};
+
+function useSectionTint() {
+  const [active, setActive] = useState("hero");
+
+  useEffect(() => {
+    const els = Object.keys(tints)
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] },
+    );
+
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return tints[active] ?? "var(--tint-hero)";
+}
+
 function Index() {
+  const tint = useSectionTint();
+
   return (
-    <div className="paper min-h-screen bg-background">
-      <header className="fixed top-0 z-30 w-full border-b-2 border-primary/25 bg-background/80 backdrop-blur">
+    <div
+      className="paper bg-dynamic min-h-screen"
+      style={{ "--section-tint": tint } as CSSProperties}
+    >
+      <header className="bg-dynamic/80 fixed top-0 z-30 w-full border-b-2 border-primary/25 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
           <span className="font-display text-lg text-primary">La Torre</span>
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
