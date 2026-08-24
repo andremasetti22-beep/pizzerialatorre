@@ -197,36 +197,6 @@ function Index() {
           items={speciali}
         />
 
-        <section id="cascate" className="scroll-mt-20 py-12 md:py-16">
-          <h2 className="font-display text-3xl leading-[1.05] text-primary sm:text-4xl md:text-5xl">
-            Le cascate di
-            <br />
-            <span className="whitespace-nowrap">Sant'Annapelago</span>
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm text-foreground/70">
-            Le pizze speciali prendono il nome da queste meraviglie naturali del territorio.
-          </p>
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {cascate.map((c) => (
-              <li
-                key={c.name}
-                className="group overflow-hidden rounded-sm border-2 border-primary/30 bg-card shadow-sm"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={c.image.url}
-                    alt={c.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="px-4 py-3 text-center">
-                  <span className="font-display text-sm text-primary">{c.name}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <MenuSection
           id="birre"
