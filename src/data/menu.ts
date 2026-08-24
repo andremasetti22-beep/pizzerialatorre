@@ -101,11 +101,11 @@ export const birreSpina: Dish[] = [
   { name: "Kronen — Forst", desc: "Frutto di un'antica ricetta, si distingue per le elevate note di malto e il gusto rotondo. Grande corpo ed elevata bevibilità." },
 ];
 
-export const cascate = [
-  "Rioo",
-  "Sassorso",
-  "Terzino",
-  "Cascadora",
-  "La Bandita",
-  "Pozzo del Pisano",
+export const cascate: Waterfall[] = [
+  { name: "I Rioo", image: iRioo },
+  { name: "Sassorso", image: sassorso },
+  { name: "Terzino", image: terzino },
+  { name: "Cascadora", image: cascadora },
+  { name: "La Bandita", image: laBandita },
+  { name: "Pozzo del Pisano", image: pozzoDelPisano },
 ];
