@@ -99,8 +99,16 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
-  --font-display: "Archivo Expanded", "Archivo", system-ui, sans-serif;
-  --font-body: "Archivo", system-ui, sans-serif;
+  --font-display: "Cinzel", "EB Garamond", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+
+  /* Tinte di sfondo per sezione (tenui) */
+  --tint-hero: oklch(0.949 0.006 90);
+  --tint-pizze: oklch(0.945 0.012 120);
+  --tint-paesane: oklch(0.944 0.014 60);
+  --tint-speciali: oklch(0.943 0.012 240);
+  --tint-cascate: oklch(0.945 0.014 190);
+  --tint-birre: oklch(0.947 0.014 80);
 }
 
 
