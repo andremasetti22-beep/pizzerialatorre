@@ -166,6 +166,11 @@
   text-transform: uppercase;
 }
 
+@utility veil {
+  background-color: color-mix(in oklab, var(--color-background) 88%, transparent);
+  backdrop-filter: saturate(0.9);
+}
+
 @utility bg-dynamic {
   background-color: var(--section-tint, var(--color-background));
   transition: background-color 1200ms cubic-bezier(0.4, 0, 0.2, 1);
