@@ -102,11 +102,13 @@ function Index() {
             src={b.url}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition-opacity duration-[1400ms] ease-in-out"
+            decoding="async"
+            className="bg-layer absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out"
             style={{ opacity: b.key === currentBg ? 1 : 0 }}
           />
         ))}
         <div className="veil paper absolute inset-0" />
+
       </div>
 
       <header className="fixed top-0 z-30 w-full border-b border-primary/20 bg-background/60 backdrop-blur-xl">

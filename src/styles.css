@@ -77,7 +77,7 @@
   --secondary: oklch(0.925 0.008 90);
   --secondary-foreground: oklch(0.15 0 0);
   --muted: oklch(0.93 0.008 90);
-  --muted-foreground: oklch(0.25 0 0 / 70%);
+  --muted-foreground: oklch(0.22 0 0 / 85%);
   --accent: oklch(0.62 0.19 32);
   --accent-foreground: oklch(0.975 0.024 92);
   --destructive: oklch(0.577 0.245 27.325);
@@ -167,9 +167,17 @@
 }
 
 @utility veil {
-  background-color: color-mix(in oklab, var(--color-background) 88%, transparent);
-  backdrop-filter: saturate(0.9);
+  /* Velo chiaro: più basso = immagini più visibili */
+  background-color: color-mix(in oklab, var(--color-background) var(--veil-strength, 68%), transparent);
 }
+
+@utility bg-layer {
+  /* Evita sfarfallii su iOS/Android durante le transizioni */
+  transform: translateZ(0) scale(1.05);
+  backface-visibility: hidden;
+  will-change: opacity;
+}
+
 
 @utility bg-dynamic {
   background-color: var(--section-tint, var(--color-background));
@@ -191,3 +199,20 @@
   background-size: 4px 4px;
 }
 
+
+/* Forza del velo: immagini più visibili su desktop, testo sempre leggibile su mobile/tablet */
+:root {
+  --veil-strength: 66%;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --veil-strength: 74%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-layer {
+    transition: none !important;
+  }
+}
