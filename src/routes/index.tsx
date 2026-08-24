@@ -46,14 +46,15 @@ const nav = [
 ];
 
 const backgrounds = [
+  { key: "panorama", url: santAnnapelagoPanorama.url },
   { key: "bosco", url: bgBosco.url },
   { key: "cuore", url: bgCuore.url },
   { key: "cascata", url: bgCascata.url },
 ];
 
-// Scorrendo verso il basso: bosco → cuore → cascata (tutte e tre presenti)
+// Scorrendo verso il basso: panorama → bosco → cuore → cascata (tutte e tre le foto di sfondo presenti)
 const sectionBg: Record<string, string> = {
-  hero: "bosco",
+  hero: "panorama",
   pizze: "bosco",
   paesane: "cuore",
   speciali: "cascata",
@@ -135,14 +136,7 @@ function Index() {
       </header>
 
       <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={santAnnapelagoPanorama.url}
-            alt="Panorama di Sant'Annapelago con il campanile della Torre e l'Appennino modenese"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
 
         <div className="relative z-10 flex flex-col items-center px-6 text-center">
           <img
