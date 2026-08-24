@@ -42,7 +42,6 @@ const nav = [
   { id: "pizze", label: "Le nostre pizze" },
   { id: "paesane", label: "Le paesane" },
   { id: "speciali", label: "Le speciali" },
-  { id: "cascate", label: "Le cascate" },
   { id: "birre", label: "Le birre" },
 ];
 
@@ -52,14 +51,14 @@ const backgrounds = [
   { key: "cascata", url: bgCascata.url },
 ];
 
+// Scorrendo verso il basso: bosco → cuore → cascata (tutte e tre presenti)
 const sectionBg: Record<string, string> = {
   hero: "bosco",
   pizze: "bosco",
   paesane: "cuore",
   speciali: "cascata",
-  cascate: "cascata",
   birre: "cuore",
-  spina: "bosco",
+  spina: "cascata",
 };
 
 function useActiveSection() {
