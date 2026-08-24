@@ -106,7 +106,10 @@ function Index() {
         <div className="veil paper absolute inset-0" />
       </div>
 
+      <header className="fixed top-0 z-30 w-full border-b border-primary/20 bg-background/60 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
           <span className="font-display text-lg text-primary">La Torre</span>
+
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
             {nav.map((n) => (
               <a
