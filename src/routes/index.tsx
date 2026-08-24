@@ -132,13 +132,26 @@ function Index() {
           <h2 className="font-display text-4xl leading-[0.95] text-primary sm:text-5xl md:text-6xl">
             Le cascate di S. Annapelago
           </h2>
-          <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <p className="mt-3 max-w-2xl text-sm text-foreground/70">
+            Le pizze speciali prendono il nome da queste meraviglie naturali del territorio.
+          </p>
+          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cascate.map((c) => (
               <li
-                key={c}
-                className="font-display rounded-sm border-2 border-primary/30 bg-card px-4 py-6 text-center text-sm text-primary"
+                key={c.name}
+                className="group overflow-hidden rounded-sm border-2 border-primary/30 bg-card shadow-sm"
               >
-                {c}
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={c.image.url}
+                    alt={c.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="px-4 py-3 text-center">
+                  <span className="font-display text-sm text-primary">{c.name}</span>
+                </div>
               </li>
             ))}
           </ul>

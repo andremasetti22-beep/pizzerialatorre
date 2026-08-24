@@ -1,4 +1,12 @@
+import iRioo from "@/assets/I_Rioo.png.asset.json";
+import sassorso from "@/assets/Sassorso.png.asset.json";
+import terzino from "@/assets/Terzino.png.asset.json";
+import cascadora from "@/assets/Cascadora.png.asset.json";
+import laBandita from "@/assets/La_Bandita.png.asset.json";
+import pozzoDelPisano from "@/assets/Pozzo_del_Pisano.png.asset.json";
+
 export type Dish = { name: string; desc?: string; price?: string };
+export type Waterfall = { name: string; image: { url: string } };
 export type Section = { id: string; title: string; subtitle?: string; items: Dish[] };
 
 export const pizze: Dish[] = [
@@ -93,11 +101,11 @@ export const birreSpina: Dish[] = [
   { name: "Kronen — Forst", desc: "Frutto di un'antica ricetta, si distingue per le elevate note di malto e il gusto rotondo. Grande corpo ed elevata bevibilità." },
 ];
 
-export const cascate = [
-  "Rioo",
-  "Sassorso",
-  "Terzino",
-  "Cascadora",
-  "La Bandita",
-  "Pozzo del Pisano",
+export const cascate: Waterfall[] = [
+  { name: "I Rioo", image: iRioo },
+  { name: "Sassorso", image: sassorso },
+  { name: "Terzino", image: terzino },
+  { name: "Cascadora", image: cascadora },
+  { name: "La Bandita", image: laBandita },
+  { name: "Pozzo del Pisano", image: pozzoDelPisano },
 ];
