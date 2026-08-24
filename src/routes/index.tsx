@@ -137,7 +137,7 @@ function Index() {
       </header>
 
 
-      <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section id="hero" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={santAnnapelagoPanorama.url}
