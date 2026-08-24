@@ -199,3 +199,20 @@
   background-size: 4px 4px;
 }
 
+
+/* Forza del velo: immagini più visibili su desktop, testo sempre leggibile su mobile/tablet */
+:root {
+  --veil-strength: 66%;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --veil-strength: 74%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-layer {
+    transition: none !important;
+  }
+}
