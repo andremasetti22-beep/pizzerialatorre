@@ -87,7 +87,7 @@ function Index() {
       className="paper bg-dynamic min-h-screen"
       style={{ "--section-tint": tint } as CSSProperties}
     >
-      <header className="bg-dynamic/80 fixed top-0 z-30 w-full border-b-2 border-primary/25 backdrop-blur">
+      <header className="fixed top-0 z-30 w-full border-b-2 border-primary/25 bg-background/70 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
           <span className="font-display text-lg text-primary">La Torre</span>
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
@@ -104,7 +104,7 @@ function Index() {
         </div>
       </header>
 
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={santAnnapelagoPanorama.url}
