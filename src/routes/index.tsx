@@ -116,16 +116,16 @@ function Index() {
 
       </div>
 
-      <header className="fixed top-0 z-30 w-full border-b border-primary/20 bg-background/60 backdrop-blur-xl">
+      <header className="fixed top-0 z-30 w-full border-b border-primary-foreground/15 bg-primary">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-          <span className="font-display text-lg text-primary">La Torre</span>
+          <span className="font-display text-lg text-primary-foreground">La Torre</span>
 
           <nav className="-mx-1 flex gap-1 overflow-x-auto">
             {nav.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className="font-display shrink-0 rounded-full px-3 py-1.5 text-xs text-primary/70 transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="font-display shrink-0 rounded-full px-3 py-1.5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground hover:text-primary"
               >
                 {n.label}
               </a>
