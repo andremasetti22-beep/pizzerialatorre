@@ -51,13 +51,13 @@ const backgrounds = [
   { key: "cascata", url: bgCascata.url },
 ];
 
-// Scorrendo verso il basso: bosco → cuore → cascata (tutte e tre presenti)
+// Scorrendo verso il basso: bosco → cuore → cascata (una sola volta ciascuna)
 const sectionBg: Record<string, string> = {
   hero: "bosco",
   pizze: "bosco",
   paesane: "cuore",
-  speciali: "cascata",
-  birre: "cuore",
+  speciali: "cuore",
+  birre: "cascata",
   spina: "cascata",
 };
 
