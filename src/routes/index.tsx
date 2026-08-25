@@ -51,45 +51,46 @@ const backgrounds = [
   { key: "cascata", url: bgCascata.url },
 ];
 
-// Scorrendo verso il basso: ogni immagine appare una sola volta.
-// Bosco = hero + pizze, Cuore = paesane + speciali, Cascata = birre + spina.
-const sectionBg: Record<string, string> = {
-  hero: "bosco",
-  pizze: "bosco",
-  paesane: "cuore",
-  speciali: "cuore",
-  birre: "cascata",
-  spina: "cascata",
-};
-
-function useActiveSection() {
-  const [active, setActive] = useState("hero");
+// Un solo ciclo completo scorrendo la pagina: bosco -> cuore -> cascata.
+// Lo sfondo è guidato dalla percentuale di scroll (monotona), non dalle
+// sezioni: così nessuna immagine può tornare indietro o ripetersi.
+function useScrollBgIndex(count: number) {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const els = Object.keys(sectionBg)
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => Boolean(el));
+    let frame = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] },
-    );
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? window.scrollY / max : 0;
+      // soglie con isteresi implicita: 3 fasce uguali
+      const next = Math.min(count - 1, Math.max(0, Math.floor(progress * count)));
+      setIndex((prev) => (prev === next ? prev : next));
+    };
 
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    };
 
-  return active;
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [count]);
+
+  return index;
 }
 
 function Index() {
-  const active = useActiveSection();
-  const currentBg = sectionBg[active] ?? "bosco";
+  const bgIndex = useScrollBgIndex(backgrounds.length);
+  const currentBg = backgrounds[bgIndex]?.key ?? "bosco";
+
 
   return (
     <div className="relative min-h-screen">
