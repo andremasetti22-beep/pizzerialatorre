@@ -89,7 +89,7 @@ function useScrollBgIndex(count: number) {
 
 function Index() {
   const bgIndex = useScrollBgIndex(backgrounds.length);
-  const currentBg = backgrounds[bgIndex].key;
+  const currentBg = backgrounds[bgIndex]?.key ?? "bosco";
 
 
   return (
