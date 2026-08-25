@@ -51,7 +51,8 @@ const backgrounds = [
   { key: "cascata", url: bgCascata.url },
 ];
 
-// Scorrendo verso il basso: bosco → cuore → cascata (una sola volta ciascuna)
+// Scorrendo verso il basso: ogni immagine appare una sola volta.
+// Bosco = hero + pizze, Cuore = paesane + speciali, Cascata = birre + spina.
 const sectionBg: Record<string, string> = {
   hero: "bosco",
   pizze: "bosco",
