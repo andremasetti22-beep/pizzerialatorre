@@ -197,5 +197,5 @@ ${section("spina", "Birre alla spina", birreSpina, undefined, false)}
 </html>
 `;
 
-writeFileSync(resolve(import.meta.dirname, "../docs/index.html"), html);
-console.log("docs/index.html generato");
+writeFileSync(resolve(import.meta.dirname, "../index.html"), html);
+console.log("index.html (radice) generato");
